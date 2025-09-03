@@ -1,5 +1,3 @@
-#include <HCSR04.h>
-
 //pinos dos sensores
 #define pinoTrig1 7
 #define pinoEcho1 8
@@ -16,9 +14,6 @@
 #define IN3 9
 #define IN4 10
 
-//objetos dos sensores
-HCSR04 sensor1(pinoTrig1, pinoEcho1);
-HCSR04 sensor2(pinoTrig2, pinoEcho2);
 
 void setup() {
   // put your setup code here, to run once:
