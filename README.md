@@ -15,6 +15,7 @@ em nada.
 
 ## Componentes Utilizados
 * 1x Placa Arduino uno;
+* 2x Sensores ultrassõnicos HCSR04
 * 2x Motores DC com caixa de redução;
 * 1x Mini driver ponte H L298N;
 * 1x Capacitor 1000uF
