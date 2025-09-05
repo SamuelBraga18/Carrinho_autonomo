@@ -16,8 +16,10 @@
 
 
 void setup() {
-  // put your setup code here, to run once:
+  //Inicia o monitor Serial
   Serial.begin(9600);
+
+  //Inicializa todas as portas
   pinMode(IN1, OUTPUT);
   pinMode(IN2, OUTPUT);
   pinMode(IN3, OUTPUT);
@@ -34,13 +36,13 @@ void setup() {
 }
 
 void loop() {
-  // put your main code here, to run repeatedly:
+  //Chamada da funcao que calcula a distancia e guarda nas variaveis
   float distancia1 = ler_distancia(pinoTrig1, pinoEcho1);
   delay(10);
   float distancia2 = ler_distancia(pinoTrig2, pinoEcho2);
   delay(10);
 
-
+  //Logica para a tomada de decisão
   if(distancia1 >= 20 and distancia2 >= 20){ 
     digitalWrite(IN1, HIGH);
     digitalWrite(IN2, LOW);
@@ -83,6 +85,7 @@ void loop() {
     digitalWrite(IN4, LOW);
   }
 
+  //Chamada da funcao que pisca os leds
   pisca_alerta();
   
 }
@@ -100,6 +103,7 @@ float ler_distancia(int trigPin, int echoPin){
   float distancia;
   long duracao;
 
+  //Deixa o pino Trig em high por 10 milissegudos
   digitalWrite(trigPin, LOW);
   delayMicroseconds(2);
   digitalWrite(trigPin, HIGH);
